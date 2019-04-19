@@ -1780,11 +1780,11 @@ public class MessagingPanel
 	
 	
 	/**
-	 * Checks if a message contains a ZEC messaging identity in it.
+	 * Checks if a message contains a HUSH messaging identity in it.
 	 * 
 	 * @param message
 	 * 
-	 * @return true if a ZEC identity is inside
+	 * @return true if a HUSH identity is inside
 	 */
 	public boolean isZCashIdentityMessage(String message)
 	{

@@ -119,8 +119,8 @@ public class AddressesPanel
 
 		ZcashJButton newTAddressButton = new ZcashJButton(langUtil.getString("panel.address.button.new.address"));
 		buttonPanel.add(newTAddressButton);
-		ZcashJButton newZAddressButton = new ZcashJButton(langUtil.getString("panel.address.button.new.z.address"));
-		buttonPanel.add(newZAddressButton);
+		/* ZcashJButton newZAddressButton = new ZcashJButton(langUtil.getString("panel.address.button.new.z.address"));
+		buttonPanel.add(newZAddressButton); */
 		ZcashJButton newZAddressButtonSapling = new ZcashJButton(langUtil.getString("panel.address.button.new.sapling.address"));
 		buttonPanel.add(newZAddressButtonSapling);
 		buttonPanel.add(new ZcashJLabel("           "));
@@ -215,13 +215,13 @@ public class AddressesPanel
 			}
 		});
 
-		newZAddressButton.addActionListener(new ActionListener()
+		/* newZAddressButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
 				createNewAddress(true, false);
 			}
-		});
+		}); */
 
 		newZAddressButtonSapling.addActionListener(new ActionListener()
 		{
@@ -456,7 +456,7 @@ public class AddressesPanel
 
 		String[][] addressBalances = new String[zAddresses.length + tAddressesCombined.size()][];
 
-		// Format double numbers - else sometimes we get exponential notation 1E-4 ZEC
+		// Format double numbers - else sometimes we get exponential notation 1E-4 HUSH
 		DecimalFormat df = new DecimalFormat("########0.00######");
 
 		String confirmed    = "\u2690";

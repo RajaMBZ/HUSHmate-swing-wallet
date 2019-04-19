@@ -126,7 +126,7 @@ public class ZcashXUI {
 	private static LanguageUtil langUtil = LanguageUtil.instance();
 	
 	public ZcashXUI() {
-		Log.info("Loading ZECmate");
+		Log.info("Loading HUSHmate");
 		loadZcashXUIFile();
 
 		javax.swing.UIManager.put("ScrollBar.background", ZcashXUI.scrollbar);
@@ -168,23 +168,23 @@ public class ZcashXUI {
 	     };
 
 	     new Thread(r).start();
-		Log.info("Finished loading ZECmate");
+		Log.info("Finished loading HUSHmate");
 	}
 
 	private void loadZcashXUIFile() {
 		try {
 			
 			String settingsDir = OSUtil.getSettingsDirectory();
-			File zcashConf = new File(settingsDir + File.separator + "zcash_ui.properties");
+			File zcashConf = new File(settingsDir + File.separator + "hush_ui.properties");
 			if (!zcashConf.exists())
 			{
 				Log.warning("Could not find file: {0} , will create a new one from default!", zcashConf.getAbsolutePath());
-				copy(getClass().getResourceAsStream("/ui/zcash_ui.properties"),zcashConf.getAbsolutePath());
-				zcashConf = new File(settingsDir + File.separator + "zcash_ui.properties");
+				copy(getClass().getResourceAsStream("/ui/hush_ui.properties"),zcashConf.getAbsolutePath());
+				zcashConf = new File(settingsDir + File.separator + "hush_ui.properties");
 				
 			} 
 			
-			Log.info("File zcash_ui.properties found");
+			Log.info("File hush_ui.properties found");
 			Properties confProps = new Properties();
 			FileInputStream fis = null;
 			try
@@ -245,7 +245,7 @@ public class ZcashXUI {
 			}
 		}
 		catch(Exception e) {
-			Log.warning("Error obtaining properties from zcash_ui.properties file due to: {0} {1}",
+			Log.warning("Error obtaining properties from hush_ui.properties file due to: {0} {1}",
 					e.getClass().getName(), e.getMessage());
 		}	
 	}
@@ -257,7 +257,7 @@ public class ZcashXUI {
         try {
             Files.copy(source, Paths.get(destination), StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception ex) {
-        	Log.warning("Error to copy zcash_ui.properties from resources due to: {0} {1}",
+        	Log.warning("Error to copy hush_ui.properties from resources due to: {0} {1}",
 					ex.getClass().getName(), ex.getMessage());
         }
 
@@ -267,13 +267,13 @@ public class ZcashXUI {
 	private void getAvailableCurrencys() {
 		String[] currencys = null;
 		try {
-			URL u = new URL("https://rates.zecmate.com");
+			URL u = new URL("https://rates.hush.zeltrez.io");
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 			huc.setConnectTimeout(2019);
 			int responseCode = huc.getResponseCode();
 
 			if (responseCode != HttpURLConnection.HTTP_OK) {
-				Log.warning("Could not connect to https://rates.zecmate.com");
+				Log.warning("Could not connect to https://rates.hush.zeltrez.io");
 			}else {
 				Reader r = new InputStreamReader(u.openStream(), "UTF-8");
 				JsonArray ar = Json.parse(r).asArray();
@@ -288,7 +288,7 @@ public class ZcashXUI {
 			}
 			
 		} catch (Exception ioe) {
-			Log.warning("Could not obtain ZEC information from rates.zecmate.com due to: {0} {1}",
+			Log.warning("Could not obtain HUSH information from rates.hush.zeltrez.io due to: {0} {1}",
 					ioe.getClass().getName(), ioe.getMessage());
 		}
 		if(currencys == null) {

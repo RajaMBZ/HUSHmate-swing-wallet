@@ -124,7 +124,7 @@ public class TransactionTable
 					
 					Log.info("Transaction ID for block explorer is: " + txID);
 					// https://explorer.zcha.in/transactions/<ID>
-					String urlPrefix = "https://explorer.zecmate.com/tx/";
+					String urlPrefix = "https://explorer.myhush.org/tx/";
 					if (installationObserver.isOnTestNet())
 					{
 						urlPrefix = "https://explorer.testnet.z.cash/tx/";

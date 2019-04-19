@@ -128,7 +128,7 @@ public class ZCashClientCaller
 		{
 			throw new IOException(
 				"The Zcash installation directory " + installDir + " needs to contain " +
-				"the command line utilities zcashd and zcash-cli. zcash-cli is missing!");
+				"the command line utilities komodod and komodo-cli. zcash-cli is missing!");
 		}
 		
 		zcashd = new File(dir, OSUtil.getZCashd());
@@ -141,7 +141,7 @@ public class ZCashClientCaller
 		{
 		    throw new IOException(
 		    	"The Zcash command line utility " + zcashcli.getCanonicalPath() + 
-		    	" was found, but zcashd was not found!");
+		    	" was found, but komodod was not found!");
 		}
 	}
 
@@ -154,9 +154,25 @@ public class ZCashClientCaller
 	  	  	CommandExecutor starter = new CommandExecutor(
 	 	       new String[] 
 				{
-	  	      		zcashd.getCanonicalPath(), 
+	  	      	zcashd.getCanonicalPath(),
+							"-ac_name=HUSH3",
+							"-ac_sapling=1",
+							"-ac_reward=0,1125000000,562500000",
+							"-ac_halving=129,340000,840000",
+							"-ac_end=128,340000,5422111",
+							"-ac_eras=3",
+							"-ac_blocktime=150",
+							"-ac_cc=2",
+							"-ac_ccenable=228,234,235,236,241",
+							"-ac_founders=1",
+							"-ac_supply=6178674",
+							"-ac_perc=11111111",
+							"-clientname=GoldenSandtrout",
+							"-addnode=188.165.212.101",
+							"-ac_cclib=hush3",
+							"-ac_script=76a9145eb10cf64f2bab1b457f1f25e658526155928fac88ac",
 	        		"-exportdir=" + wrapStringParameter(exportDir),
-					"-reindex"
+				    	"-reindex"
 	       	});
 
  	  		return starter.startChildProcess();
@@ -164,7 +180,23 @@ public class ZCashClientCaller
 			CommandExecutor starter = new CommandExecutor(
 	        	new String[] 
 	        	{
-	        		zcashd.getCanonicalPath(), 
+	        		zcashd.getCanonicalPath(),
+							"-ac_name=HUSH3",
+							"-ac_sapling=1",
+							"-ac_reward=0,1125000000,562500000",
+							"-ac_halving=129,340000,840000",
+							"-ac_end=128,340000,5422111",
+							"-ac_eras=3",
+							"-ac_blocktime=150",
+							"-ac_cc=2",
+							"-ac_ccenable=228,234,235,236,241",
+							"-ac_founders=1",
+							"-ac_supply=6178674",
+							"-ac_perc=11111111",
+							"-clientname=GoldenSandtrout",
+							"-addnode=188.165.212.101",
+							"-ac_cclib=hush3",
+							"-ac_script=76a9145eb10cf64f2bab1b457f1f25e658526155928fac88ac",
 	        		"-exportdir=" + wrapStringParameter(exportDir)
 	    	});
 	    
@@ -177,7 +209,7 @@ public class ZCashClientCaller
 		throws IOException,InterruptedException 
 	{
 	    CommandExecutor stopper = new CommandExecutor(
-	            new String[] { zcashcli.getCanonicalPath(), "stop" });
+	            new String[] { zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "stop" });
 	    
 	    String result = stopper.execute();
 	    Log.info("Stop command issued: " + result);
@@ -188,7 +220,7 @@ public class ZCashClientCaller
 		throws IOException, InterruptedException, WalletCallException 
 	{
 	    CommandExecutor infoGetter = new CommandExecutor(
-	            new String[] { zcashcli.getCanonicalPath(), "getinfo"} );
+	            new String[] { zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "getinfo"} );
 	    String info = infoGetter.execute();
 	    
 	    if (info.trim().toLowerCase(Locale.ROOT).startsWith("error: couldn't connect to server"))
@@ -606,7 +638,7 @@ public class ZCashClientCaller
 		
 		String[] sendCashParameters = new String[]
 	    {
-		    this.zcashcli.getCanonicalPath(), "z_sendmany", wrapStringParameter(from),
+		    this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "z_sendmany", wrapStringParameter(from),
 		    wrapStringParameter(toManyArrayStr),
 		    // Default min confirmations for the input transactions is 1
 		    "1",
@@ -652,14 +684,14 @@ public class ZCashClientCaller
 	
 	
 	/**
-	 * Sends ZEC from a source address to a destination address. The change is sent back to the source address.
+	 * Sends HUSH from a source address to a destination address. The change is sent back to the source address.
 	 * The amount of change is calculated based on the existing confirmed balance for the address (parameter).
 	 * This may not be 100% accurate if the blockchain is not synchronized.
 	 * 
 	 * @param from source address (T/Z)
 	 * @param to destination address (T/Z)
 	 * @param balance current confirmed balance of the source address
-	 * @param amount ZEC amount to send
+	 * @param amount HUSH amount to send
 	 * @param memo text memo to include in the transaction
 	 * @param transactionFee transaction see to include
 	 * 
@@ -720,7 +752,7 @@ public class ZCashClientCaller
 		String toManyArrayStr =	toMany.toString(WriterConfig.MINIMAL);		
 		String[] sendCashParameters = new String[]
 	    {
-		    this.zcashcli.getCanonicalPath(), "z_sendmany", wrapStringParameter(from),
+		    this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "z_sendmany", wrapStringParameter(from),
 		    wrapStringParameter(toManyArrayStr),
 		    // Default min confirmations for the input transactions is 1
 		    "1",
@@ -800,7 +832,7 @@ public class ZCashClientCaller
 		String toManyArrayStr =	toMany.toString();		
 		String[] sendCashParameters = new String[]
 	    {
-		    this.zcashcli.getCanonicalPath(), "z_sendmany", wrapStringParameter(from),
+		    this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "z_sendmany", wrapStringParameter(from),
 		    wrapStringParameter(toManyArrayStr),
 		    // Default min confirmations for the input transactions is 1
 		    "1",
@@ -991,7 +1023,7 @@ public class ZCashClientCaller
    		throws WalletCallException, IOException, InterruptedException
     {
 		if (ZCashClientCaller.walletIsEncrypted == null) {
-			String[] params = new String[] { this.zcashcli.getCanonicalPath(), "walletlock" };
+			String[] params = new String[] { this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", "walletlock" };
 			CommandExecutor caller = new CommandExecutor(params);
 	    	String strResult = caller.execute();
 
@@ -1133,6 +1165,7 @@ public class ZCashClientCaller
 		String[] params = new String[] 
 		{ 
 			this.zcashcli.getCanonicalPath(),
+			"-ac_name=HUSH3",
 			"-rpcclienttimeout=5000",
 			"z_importkey", 
 			wrapStringParameter(key) 
@@ -1291,16 +1324,16 @@ public class ZCashClientCaller
 		String[] params;
 		if (command4 != null)
 		{
-			params = new String[] { this.zcashcli.getCanonicalPath(), command1, command2, command3, command4 };
+			params = new String[] { this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", command1, command2, command3, command4 };
 		} else if (command3 != null)
 		{
-			params = new String[] { this.zcashcli.getCanonicalPath(), command1, command2, command3 };
+			params = new String[] { this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", command1, command2, command3 };
 		} else if (command2 != null)
 		{
-			params = new String[] { this.zcashcli.getCanonicalPath(), command1, command2 };
+			params = new String[] { this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", command1, command2 };
 		} else
 		{
-			params = new String[] { this.zcashcli.getCanonicalPath(), command1 };
+			params = new String[] { this.zcashcli.getCanonicalPath(), "-ac_name=HUSH3", command1 };
 		}
 
 	    CommandExecutor caller = new CommandExecutor(params);

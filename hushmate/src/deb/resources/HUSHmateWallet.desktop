@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0.0
+Name=HUSHmate Swing Wallet
+Comment=HUSHmate Swing Wallet is a dekstop GUI full node wallet for Hush
+GenericName=HUSHmate
+Keywords=Hush;Crypto-currency
+Exec=hushmate
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/usr/lib/hushmate/HUSHmate.png
+Categories=GNOME;Application;
+StartupNotify=true

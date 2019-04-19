@@ -1,10 +1,10 @@
-## [ZECmate Swing Wallet](https://swing.zecmate.com/) known security issues
+## [HUSHmate Swing Wallet](https://swing.hushmate.com/) known security issues
 
 This document describes various security-related vulnerabilities in the GUI wallet that have become known after release and users should be aware of them!
 
 ### Compatibility with other applications
 
-The Zcash Desktop GUI Wallet is not compatible with applications that modify the Zcash `wallet.dat` file. The wallet should not be used
+The Hush Desktop GUI Wallet is not compatible with applications that modify the Hush `wallet.dat` file. The wallet should not be used
 with such applications on the same PC. For instance some distributed exchange applications are known to create watch-only addresses in the
 `wallet.dat` file that cause the GUI wallet to display a wrong balance and/or display addresses that do not belong to the wallet. 
 

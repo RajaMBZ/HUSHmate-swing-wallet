@@ -100,7 +100,7 @@ public class OSUtil
 	// Returns the name of the zcashd server - may vary depending on the OS.
 	public static String getZCashd()
 	{
-		String zcashd = "zcashd";
+		String zcashd = "komodod";
 		
 		OS_TYPE os = getOSType();
 		if (os == OS_TYPE.WINDOWS)
@@ -115,7 +115,7 @@ public class OSUtil
 	// Returns the name of the zcash-cli tool - may vary depending on the OS.
 	public static String getZCashCli()
 	{
-		String zcashcli = "zcash-cli";
+		String zcashcli = "komodo-cli";
 		
 		OS_TYPE os = getOSType();
 		if (os == OS_TYPE.WINDOWS)
@@ -133,7 +133,7 @@ public class OSUtil
 	{
 		// TODO: this way of finding the dir is JAR name dependent - tricky, may not work
 		// if program is repackaged as different JAR!
-		final String JAR_NAME = "ZECmate.jar";
+		final String JAR_NAME = "HUSHmate.jar";
 		String cp = System.getProperty("java.class.path");
 		if ((cp != null) && (cp.indexOf(File.pathSeparator) == -1) &&
 			(cp.endsWith(JAR_NAME)))
@@ -216,13 +216,13 @@ public class OSUtil
 		
 		if (os == OS_TYPE.MAC_OS)
 		{
-			return new File(System.getProperty("user.home") + "/Library/Application Support/Zcash").getCanonicalPath();
+			return new File(System.getProperty("user.home") + "/Library/Application Support/Komodo/HUSH3").getCanonicalPath();
 		} else if (os == OS_TYPE.WINDOWS)
 		{
-			return new File(System.getenv("APPDATA") + "\\Zcash").getCanonicalPath();
+			return new File(System.getenv("APPDATA") + "\\Komodo\\HUSH3").getCanonicalPath();
 		} else
 		{
-			return new File(System.getProperty("user.home") + "/.zcash").getCanonicalPath();
+			return new File(System.getProperty("user.home") + "/.komodo/HUSH3").getCanonicalPath();
 		}
 	}
 
@@ -237,13 +237,13 @@ public class OSUtil
 	    
 	    if (os == OS_TYPE.MAC_OS)
 	    {
-	        dir = new File(userHome, "Library/Application Support/ZECmate");
+	        dir = new File(userHome, "Library/Application Support/HUSHmate");
 	    } else if (os == OS_TYPE.WINDOWS)
 		{
-			dir = new File(System.getenv("LOCALAPPDATA") + "\\ZECmate");
+			dir = new File(System.getenv("LOCALAPPDATA") + "\\HUSHmate");
 		} else
 	    {
-	        dir = new File(userHome.getCanonicalPath() + File.separator + ".ZECmate");
+	        dir = new File(userHome.getCanonicalPath() + File.separator + ".HUSHmate");
 	    }
 	    
 		if (!dir.exists())
@@ -280,15 +280,15 @@ public class OSUtil
 	}
 
 
-	// Can be used to find zcashd/zcash-cli if it is not found in the same place as the wallet JAR
+	// Can be used to find komodod/komodo-cli if it is not found in the same place as the wallet JAR
 	// Null if not found
 	public static File findZCashCommand(String command)
 		throws IOException
 	{
 	    File f;
 	    
-	    // Try with system property zcash.location.dir - may be specified by caller
-	    String ZCashLocationDir = System.getProperty("zcash.location.dir");
+	    // Try with system property komodo.location.dir - may be specified by caller
+	    String ZCashLocationDir = System.getProperty("komodo.location.dir");
 	    if ((ZCashLocationDir != null) && (ZCashLocationDir.trim().length() > 0))
 	    {
 	        f = new File(ZCashLocationDir + File.separator + command);
@@ -308,11 +308,11 @@ public class OSUtil
 				"/usr/bin/", // Typical Ubuntu
 				"/bin/",
 				"/usr/local/bin/",
-				"/usr/local/zcash/bin/",
-				"/usr/lib/zcash/bin/",
+				"/usr/local/komodo/bin/",
+				"/usr/lib/komodo/bin/",
 				"/opt/local/bin/",
-				"/opt/local/zcash/bin/",
-				"/opt/zcash/bin/"
+				"/opt/local/komodo/bin/",
+				"/opt/komodo/bin/"
 			};
 	
 			for (String d : dirs)
@@ -333,7 +333,7 @@ public class OSUtil
 	    		File pf = new File(programFiles);
 	    		if (pf.exists() && pf.isDirectory())
 	    		{
-	    			File ZDir = new File(pf, "Zcash");
+	    			File ZDir = new File(pf, "Komodo");
 	    			if (ZDir.exists() && ZDir.isDirectory())
 	    			{
 	    				File cf = new File(ZDir, command);

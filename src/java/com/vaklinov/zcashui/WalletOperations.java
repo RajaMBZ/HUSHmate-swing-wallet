@@ -241,7 +241,7 @@ public class WalletOperations
 	private boolean checkExperimentalFeaturesOn() throws IOException {
 		boolean experimentalFeaturesOn = true;
 		String blockchainDir = OSUtil.getBlockchainDirectory();
-		File zelcashConf = new File(blockchainDir + File.separator + "zcash.conf");
+		File zelcashConf = new File(blockchainDir + File.separator + "HUSH3.conf");
 		Properties confProps = new Properties();
 		FileInputStream fis = null;
 		String property = null;

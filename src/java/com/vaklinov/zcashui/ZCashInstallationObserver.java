@@ -87,15 +87,15 @@ public class ZCashInstallationObserver
 		}
 
 		Log.info("Using Zcash utilities: " +
-		                   "zcashd: "    + ((zcashd != null) ? zcashd.getCanonicalPath() : "<MISSING>") + ", " +
-		                   "zcash-cli: " + ((zcashcli != null) ? zcashcli.getCanonicalPath() : "<MISSING>"));
+		                   "komodod: "    + ((zcashd != null) ? zcashd.getCanonicalPath() : "<MISSING>") + ", " +
+		                   "komodo-cli: " + ((zcashcli != null) ? zcashcli.getCanonicalPath() : "<MISSING>"));
 
 		if ((zcashd == null) || (zcashcli == null) || (!zcashd.exists()) || (!zcashcli.exists()))
 		{
 			throw new InstallationDetectionException(
 				"The Zcash GUI Wallet installation directory " + installDir + " needs\nto contain " +
-				"the command line utilities zcashd and zcash-cli. At least one of them is missing! \n" +
-				"Please place files ZECmate.jar, " + OSUtil.getZCashCli() + ", " + 
+				"the command line utilities komodod and komodo-cli. At least one of them is missing! \n" +
+				"Please place files HUSHmate.jar, " + OSUtil.getZCashCli() + ", " + 
 				OSUtil.getZCashd() + " in the same directory.");
 		}
 	}
@@ -119,7 +119,7 @@ public class ZCashInstallationObserver
 	private synchronized DaemonInfo getDaemonInfoForUNIXLikeOS()
 		throws IOException, InterruptedException
 	{
-		return getDaemonInfoForUNIXLikeOS("zcashd");
+		return getDaemonInfoForUNIXLikeOS("komodod");
 	}
 
 	// So far tested on macOS and Linux - expected to work on other UNIXes as well
@@ -196,7 +196,7 @@ public class ZCashInstallationObserver
 	private synchronized DaemonInfo getDaemonInfoForWindowsOS()
 		throws IOException, InterruptedException
 	{
-		return getDaemonInfoForWindowsOS("zcashd");
+		return getDaemonInfoForWindowsOS("komodod");
 	}
 	
 	public static synchronized DaemonInfo getDaemonInfoForWindowsOS(String daemonName)
@@ -294,7 +294,7 @@ public class ZCashInstallationObserver
 		}
 		
 		String blockChainDir = OSUtil.getBlockchainDirectory();
-		File zcashConf = new File(blockChainDir + File.separator + "zcash.conf");
+		File zcashConf = new File(blockChainDir + File.separator + "HUSH3.conf");
 		if (zcashConf.exists())
 		{
 			Properties confProps = new Properties();

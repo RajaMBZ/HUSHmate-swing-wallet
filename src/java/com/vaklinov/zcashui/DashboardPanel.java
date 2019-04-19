@@ -198,15 +198,15 @@ public class DashboardPanel
 
 		ZcashJPanel tempPanel = new ZcashJPanel(new FlowLayout(FlowLayout.LEFT, 14, 16));
 		ZcashJLabel logoLabel = new ZcashJLabel(new ImageIcon(
-				this.getClass().getClassLoader().getResource("images/ZECmate-logo-small.png")));
+				this.getClass().getClassLoader().getResource("images/HUSHmate-logo-small.png")));
 		logoLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		logoLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    Desktop.getDesktop().browse(new URI("https://zecmate.com/"));
+                    Desktop.getDesktop().browse(new URI("https://hushmate.com/"));
                 } catch (Exception ex) {
-                	Log.warning("Error oppening https://zecmate.com/ due to: {0} {1}",
+                	Log.warning("Error oppening https://hushmate.com/ due to: {0} {1}",
         					ex.getClass().getName(), ex.getMessage());
                 }
             }
@@ -531,7 +531,7 @@ public class DashboardPanel
 		}
 		
 		// TODO: Get the start date right after Zcash release - from first block!!!
-		final Date startDate = new Date("06 Nov 2016 02:00:00 GMT");
+		final Date startDate = new Date("14 Apr 2019 17:30:00 GMT");
 		final Date nowDate = new Date(System.currentTimeMillis());
 		
 		long fullTime = nowDate.getTime() - startDate.getTime();
@@ -661,7 +661,7 @@ public class DashboardPanel
 			return;
 		}
 		
-		// Format double numbers - else sometimes we get exponential notation 1E-4 ZEC
+		// Format double numbers - else sometimes we get exponential notation 1E-4 HUSH
 		DecimalFormat df = new DecimalFormat("###,###,##0.00######");
 		
 		String transparentBalance = df.format(balance.transparentBalance);
@@ -684,7 +684,7 @@ public class DashboardPanel
 			DecimalFormat currencyDF = new DecimalFormat("###,###,##0.00");
 			formattedCurrencyVal = currencyDF.format(currencyBalance);
 			
-			// make sure ZEC and currency are aligned
+			// make sure HUSH and currency are aligned
 			int diff = totalUCBalance.length() - formattedCurrencyVal.length();
 			while (diff-- > 0)
 			{
@@ -852,7 +852,7 @@ public class DashboardPanel
 						long start = System.currentTimeMillis();
 						JsonObject exchangeData = ExchangeRatePanel.this.getExchangeDataFromRemoteService();
 						long end = System.currentTimeMillis();
-						Log.info("Gathering of ZEC Exchange data done in " + (end - start) + "ms." );
+						Log.info("Gathering of HUSH Exchange data done in " + (end - start) + "ms." );
 							
 						return exchangeData;
 					}
@@ -971,7 +971,7 @@ public class DashboardPanel
 			return this.lastCurrencyPrice;
 		}
 				
-		// Obtains the ZEC exchange data as a JsonObject
+		// Obtains the HUSH exchange data as a JsonObject
 		private JsonObject getExchangeDataFromRemoteService()
 		{
 			JsonObject data = new JsonObject();
@@ -979,13 +979,13 @@ public class DashboardPanel
 			
 			try
 			{
-				URL u = new URL("https://api.coinmarketcap.com/v1/ticker/zcash");
+				URL u = new URL("https://api.coinmarketcap.com/v1/ticker/hush");
 				HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 				huc.setConnectTimeout(2019);
 				int responseCode = huc.getResponseCode();
 
  				if (responseCode != HttpURLConnection.HTTP_OK) {
-					Log.warning("https://api.coinmarketcap.com/v1/ticker/zcash");
+					Log.warning("https://api.coinmarketcap.com/v1/ticker/hush");
 				}
 				else {
 					Reader r = new InputStreamReader(u.openStream(), "UTF-8");
@@ -994,23 +994,23 @@ public class DashboardPanel
 				}
 			} catch (Exception ioe)
 			{
-				Log.warning("Could not obtain ZEC exchange information from coinmarketcap.com due to: {0} {1}", 
+				Log.warning("Could not obtain HUSH exchange information from coinmarketcap.com due to: {0} {1}", 
 						    ioe.getClass().getName(), ioe.getMessage());
 			}
 
 			try
 			{
-				URL u = new URL("https://rates.zecmate.com");
+				URL u = new URL("https://rates.hush.zeltrez.io");
 				HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 				huc.setConnectTimeout(2019);
 				int responseCode = huc.getResponseCode();
 
 				if (responseCode != HttpURLConnection.HTTP_OK) {
-					Log.warning("Could not connect to https://rates.zecmate.com");
+					Log.warning("Could not connect to https://rates.hush.zeltrez.io");
 				} else {
 					Reader r = new InputStreamReader(u.openStream(), "UTF-8");
 					JsonArray ar = Json.parse(r).asArray();
-					Log.info("Looking in https://rates.zecmate.com for currency: "+currency);
+					Log.info("Looking in https://rates.hush.zeltrez.io for currency: "+currency);
 					for (int i = 0; i < ar.size(); ++i) {
 						JsonObject obj = ar.get(i).asObject();
 						String id = obj.get("code").toString().replaceAll("\"", "");
@@ -1019,13 +1019,13 @@ public class DashboardPanel
 							break;
 						}
 						if(i+1 == ar.size()) {
-							Log.warning("Could not find the currency in https://rates.zecmate.com");
+							Log.warning("Could not find the currency in https://rates.hush.zeltrez.io");
 						}
 					}
 				}
 			} catch (Exception ioe)
 			{
-				Log.warning("Could not obtain ZEC exchange information from rates.zecmate.com due to: {0} {1}", 
+				Log.warning("Could not obtain HUSH exchange information from rates.hush.zeltrez.io due to: {0} {1}", 
 						    ioe.getClass().getName(), ioe.getMessage());
 			}
 			Log.info(data.toString());

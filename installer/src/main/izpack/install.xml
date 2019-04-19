@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <installation version="5.0">
   <info>
-    <appname>ZECmate</appname>
-    <appversion>1.3.0</appversion>
-    <url>https://zecmate.com</url>
+    <appname>HUSHmate</appname>
+    <appversion>1.0.0</appversion>
+    <url>https://hushmate.com</url>
     <authors>
         <author name="Ivan Vaklinov" email="ivan@vaklinov.com"/>
         <author name="Armand Ballaci" email="aballaci@gmail.com"/>
@@ -30,10 +30,10 @@
     <res id="LicencePanel.licence" src="@{main.basedir}/../LICENSE"/>
     <res id="HTMLHelloPanel.welcome" src="welcome.html"/>
     <res id="HTMLInfoPanel.welcome" src="welcome.html"/>
-    <res id="ZcashLogo" src="images/ZECmate-logo.png"/>
+    <res id="HushLogo" src="images/HUSHmate-logo.png"/>
 
     <res id="TargetPanel.dir.windows" src="TargetDirWindows.txt"/>
-    <res id="packsLang.xml_eng" src="i18n/zcashPacksLang.xml_eng"/>
+    <res id="packsLang.xml_eng" src="i18n/hushPacksLang.xml_eng"/>
     <res id="CustomLangPack.xml_eng" src="i18n/customLangPack.xml_eng" />
 
     <res id="Installer.image.0" src=""/>
@@ -47,8 +47,8 @@
   </resources>
   <variables>
     <variable name="InstallerFrame.logfilePath" value="Default"/>
-    <variable name="WELCOME_TEXT" value="ZECmate Swing Wallet Installation"/>
-    <variable name="WELCOME_VERSION" value="Version: 1.3.0"/>
+    <variable name="WELCOME_TEXT" value="HUSHmate Swing Wallet Installation"/>
+    <variable name="WELCOME_VERSION" value="Version: 1.0.0"/>
     <variable name="WELCOME_BG_COLOR" value="#404B62"/>
     <variable name="WELCOME_TEXT_COLOR" value="#ffffff"/>
   </variables>
@@ -116,9 +116,9 @@
     </fileset>
     <fileset dir="@{staging.dir}/licences" targetdir="${INSTALL_PATH}/licences"/>
     </pack>
-    <pack name="Zcash Binaries" preselected="yes" required="yes">
-          <description>Zcash Binaries</description>
-          <fileset dir="@{staging.dir}/zcash-win-binaries" targetdir="$INSTALL_PATH/app"/>
+    <pack name="Komodo Binaries" preselected="yes" required="yes">
+          <description>Komodo Binaries</description>
+          <fileset dir="@{staging.dir}/komodo-win-binaries" targetdir="$INSTALL_PATH/app"/>
     </pack>
   </packs>
 </installation>

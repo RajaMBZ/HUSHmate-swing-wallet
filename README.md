@@ -1,9 +1,9 @@
-# [ZECmate Swing Wallet](https://swing.zecmate.com/) 
+# [HUSHmate Swing Wallet](https://swing.hushmate.com/) 
 ## Your best mate for [Zcash](https://z.cash/)
 
-ZECmate Swing Wallet is a GUI destkop wallet for Zcash. This fully compatible sapling release is availalbe for macOS, Windows and Linux. Download the latest release from GitHub releases or head on to [ZECmate Swing Wallet website](https://swing.zecmate.com/) .
+HUSHmate Swing Wallet is a GUI destkop wallet for Hush. This fully compatible sapling release is availalbe for macOS, Windows and Linux. Download the latest release from GitHub releases or head on to [HUSHmate Swing Wallet website](https://swing.hushmate.com/) .
 
-![Screenshot](https://github.com/ZECmate/ZECmate-swing-wallet/raw/master/docs/zecmate.png "Main Window")
+![Screenshot](https://github.com/HUSHmate/HUSHmate-swing-wallet/raw/master/docs/hushmate.png "Main Window")
 
 **This wallet is targeted at advanced users who understand the implications of running a full Zcash node on**
 **the local machine, maintaining a full local copy of the blockchain, maintaining and backing up the**
@@ -17,16 +17,16 @@ ZECmate Swing Wallet is a GUI destkop wallet for Zcash. This fully compatible sa
 **they are considered outdated after 18 weeks and stop working. So they need to be updated to a newer version before this term expires.**
 **Users need to ensure they use an up-to-date version of the wallet (e.g. update the wallet every two months or so).**
 
-#### Download ZECmate Swing wallet at https://github.com/ZECmate/ZECmate-swing-wallet/releases or from official website https://swing.zecmate.com or by using APT repository following https://zecmate.github.io/aptrepo/
+#### Download HUSHmate Swing wallet at https://github.com/HUSHmate/HUSHmate-swing-wallet/releases or from official website https://swing.hushmate.com or by using APT repository following https://hushmate.github.io/aptrepo/
 
-## Building, installing and running the ZECmate Swing Wallet
+## Building, installing and running the HUSHmate Swing Wallet
 
-Before installing the ZECmate Swing Wallet you need to have Zcash up and running. The following 
+Before installing the HUSHmate Swing Wallet you need to have Zcash up and running. The following 
 [guide](https://github.com/zcash/zcash/blob/master/README.md) 
 explains how to set up [Zcash](https://z.cash/). 
 
 **For security reasons it is recommended to always build the GUI wallet program from GitHub**
-**[source](https://github.com/ZECmate/ZECmate-swing-wallet/archive/master.zip).**
+**[source](https://github.com/HUSHmate/HUSHmate-swing-wallet/archive/master.zip).**
 The details of how to build it are described below (easy to follow). 
 
 
@@ -50,49 +50,49 @@ The details of how to build it are described below (easy to follow).
 
 2. Building from source code
 
-   As a start you need to clone the ZECmate-swing-wallet Git repository:
+   As a start you need to clone the HUSHmate-swing-wallet Git repository:
    ```
-   user@ubuntu:~/build-dir$ git clone https://github.com/ZECmate/ZECmate-swing-wallet.git
+   user@ubuntu:~/build-dir$ git clone https://github.com/HUSHmate/HUSHmate-swing-wallet.git
    ```
    Change the current directory:
    ```
-   user@ubuntu:~/build-dir$ cd ZECmate-swing-wallet/
+   user@ubuntu:~/build-dir$ cd HUSHmate-swing-wallet/
    ```
    Issue the build command:
    ```
-   user@ubuntu:~/build-dir/ZECmate-swing-wallet$ ant -buildfile ./src/build/build.xml
+   user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ ant -buildfile ./src/build/build.xml
    ```
-   This takes a few seconds and when it finishes, it builds a JAR file `./build/jars/ZECmate.jar`. 
+   This takes a few seconds and when it finishes, it builds a JAR file `./build/jars/HUSHmate.jar`. 
    You need to make this file executable:
    ```
-   user@ubuntu:~/build-dir/ZECmate-swing-wallet$ chmod u+x ./build/jars/ZECmate.jar
+   user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ chmod u+x ./build/jars/HUSHmate.jar
    ```
    At this point the build process is finished the built GUI wallet program is the JAR 
-   file `./build/jars/ZECmate.jar`. In addition the JAR file 
+   file `./build/jars/HUSHmate.jar`. In addition the JAR file 
    `bitcoinj-core-0.14.5.jar` is also necessary to run the wallet. 
 
-3. Installing the built ZECmate Swing Wallet
+3. Installing the built HUSHmate Swing Wallet
 
    3.1. If you have built Zcash from source code:
 
-     Assuming you have already built from source code [Zcash](https://z.cash/) in directory `/home/user/zcash/src` (for example - this is the typical build dir. for Zcash v2.0.3) which contains the command line tools `zcash-cli` and `zcashd` you need to take the created JAR files and copy them to directory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `zcashd`). Example copy command:
+     Assuming you have already built from source code [Zcash](https://z.cash/) in directory `/home/user/zcash/src` (for example - this is the typical build dir. for Zcash v2.0.3) which contains the command line tools `komodo-cli` and `komodod` you need to take the created JAR files and copy them to directory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `komodod`). Example copy command:
       ```
-      user@ubuntu:~/build-dir/ZECmate-swing-wallet$ cp -R -v ./build/jars/* /home/user/zcash/src    
+      user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ cp -R -v ./build/jars/* /home/user/komodo/src    
       ```
 
-4. Running the installed ZECmate Swing Wallet
+4. Running the installed HUSHmate Swing Wallet
 
    It may be run from command line or started from another GUI tool (e.g. file manager). 
-   Assuming you have already installed [Zcash](https://z.cash/) and the GUI Wallet `ZECmate.jar` in 
+   Assuming you have already installed [Zcash](https://z.cash/) and the GUI Wallet `HUSHmate.jar` in 
    directory `/home/user/zcash/src` one way to run it from command line is:
    ```
-   user@ubuntu:~/build-dir/ZECmate-swing-wallet$ java -jar /home/user/zcash/src/ZECmate.jar
+   user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ java -jar /home/user/zcash/src/HUSHmate.jar
    ```
    If you are using Ubuntu (or similar ;) Linux you may instead just use the file manager and 
-   right-click on the `ZECmate.jar` file and choose the option "Open with OpenJDK 8 Runtime". 
+   right-click on the `HUSHmate.jar` file and choose the option "Open with OpenJDK 8 Runtime". 
    This will start the Zcash GUI wallet.
    
-   **Important:** the Zcash configuration file `~/.zcash/zcash.conf` needs to be correctly set up for the GUI
+   **Important:** the Hush configuration file `~/.komodo/HUSH3/HUSH3.conf` needs to be correctly set up for the GUI
    wallet to work. Specifically the RPC user and password need to be set in it like:
    ```
    rpcuser=username
@@ -104,11 +104,11 @@ The details of how to build it are described below (easy to follow).
 Inno Setup is required for windows.
 Create build folder and copy the content of EclipseExample into it and rename windowsExample.xml to build.xml 
 Create a dist folder in this build folder and copy the whole folder resources from src folder into it.
-Additionally in this build folder create a dist folder and copy your zcashd.exe, zcash-cli.exe into it if on windows. 
-If on macOS copy your zcashd and zcash-cli and check their permisson is 755. on macOS a change in build.xml are needed from .exe to .dmg.
+Additionally in this build folder create a dist folder and copy your komodod.exe, komodo-cli.exe into it if on windows. 
+If on macOS copy your komodod and komodo-cli and check their permisson is 755. on macOS a change in build.xml are needed from .exe to .dmg.
 
 ### License
-This program is distributed under an [MIT License](https://github.com/ZECmate/ZECmate-swing-wallet/raw/master/LICENSE).
+This program is distributed under an [MIT License](https://github.com/HUSHmate/HUSHmate-swing-wallet/raw/master/LICENSE).
 
 ### Disclaimer
 
@@ -122,20 +122,20 @@ SOFTWARE.
 
 ### Known issues and limitations
 
-1. Issue: ZECmate Swing Wallet is not compatible with applications that modify the Zcash `wallet.dat` file. The wallet should not be used
+1. Issue: HUSHmate Swing Wallet is not compatible with applications that modify the HUSH3 `wallet.dat` file. The wallet should not be used
 with such applications on the same PC. For instance some distributed exchange applications are known to create watch-only addresses in the
 `wallet.dat` file that cause the GUI wallet to display a wrong balance and/or display addresses that do not belong to the wallet. 
 1. Limitation: if two users exchange text messages via the messaging UI TAB and one of them has a system clock, substantially running slow or fast by more than 1 minute, it is possible that this user will see text messages appearing out of order. 
-1. Limitation: if a messaging identity has been created (happens on first click on the messaging UI tab), then replacing the `wallet.dat` or changing the node configuration between mainnet and testnet will make the identity invalid. This will result in a wallet update error. To remove the error the directory `~/.ZECmate/messaging` may be manually renamed or deleted (when the wallet is stopped). **CAUTION: all messaging history will be lost in this case!**
+1. Limitation: if a messaging identity has been created (happens on first click on the messaging UI tab), then replacing the `wallet.dat` or changing the node configuration between mainnet and testnet will make the identity invalid. This will result in a wallet update error. To remove the error the directory `~/.HUSHmate/messaging` may be manually renamed or deleted (when the wallet is stopped). **CAUTION: all messaging history will be lost in this case!**
 1. Limitation: The list of transactions may not show all outgoing ones (specifically outgoing Z address 
 transactions). A corresponding issue [#1438](https://github.com/zcash/zcash/issues/1438) has been opened 
 for the Zcash developers. 
-1. Limitation: The CPU percentage shown to be taken by zcashd on Linux is the average for the entire lifetime 
+1. Limitation: The CPU percentage shown to be taken by komodod on Linux is the average for the entire lifetime 
 of the process. This is not very useful. This will be improved in future versions.
-1. Limitation: When using a natively compiled wallet version (e.g. `ZECmate.exe` for Windows) on a 
+1. Limitation: When using a natively compiled wallet version (e.g. `HUSHmate.exe` for Windows) on a 
 very high resolution monitor with a specifically configured DPI scaling (enlargement) factor to make GUI 
 elements look larger, the GUI elements of the wallet actually do not scale as expected. To correct this on
-Windows you need to right-click on `ZECmate.exe` and choose option:
+Windows you need to right-click on `HUSHmate.exe` and choose option:
 ```
 Properties >> Compatibility >> Override High DPI scaling behavior >> Scaling Performed by (Application)
 ```

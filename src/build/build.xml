@@ -27,12 +27,12 @@
  * THE SOFTWARE.                                    
  *
 -->
-<project name="ZECmate" basedir="../.." default="buildit">
+<project name="HUSHmate" basedir="../.." default="buildit">
 	
-    <property name="zcash.swing.module.dir"     value="${basedir}/zecmate"/>
+    <property name="hush.swing.module.dir"     value="${basedir}/hushmate"/>
     <property name="src.dir"     value="src"/>
 	<property name="lib.dir"     value="lib"/>
-	<property name="deb.dir"  value="${zcash.swing.module.dir}/src/deb"/>
+	<property name="deb.dir"  value="${hush.swing.module.dir}/src/deb"/>
 	<property name="deb.resource.dir"  value="${deb.dir}/resources"/>
     <property name="build.dir"   value="build"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
@@ -121,58 +121,58 @@
 	
     <target name="ubuntuPackage" depends="jar,copyothers">	
     	<mkdir dir="${ubuntu.package.dir}"/>
-	    <deb destfile="${ubuntu.package.dir}/zecmate-1.3.0.deb" 
+	    <deb destfile="${ubuntu.package.dir}/hushmate-1.0.0.deb" 
 	    	 control="${deb.dir}/control"
 	    	 verbose="true">
 	    	
 	      <data src="${jar.dir}/${ant.project.name}.jar" type="file">
-	        <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+	        <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 	      </data>
 	      <data src="${jar.dir}/bitcoinj-core-0.14.5.jar" type="file">
-	        <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+	        <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 	      </data>
 	      <data src="${jar.dir}/bitcoinj-core-0.14.5_LICENSE.txt" type="file">
-	        <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+	        <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 	      </data>
 		  <data src="${jar.dir}/sqlite-jdbc-3.21.0.jar" type="file">
-			 <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+			 <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 		  </data>
 		  <data src="${jar.dir}/sqlite-jdbc-3.21.0_LICENSE.txt" type="file">
-			 <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+			 <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 		  </data>
 	    	
 	    	<data src="${jar.dir}/zxing-core-3.3.3.jar" type="file">
-				<mapper type="perm" filemode="755" prefix="/usr/lib/zzecmate-gui-wallet" />
+				<mapper type="perm" filemode="755" prefix="/usr/lib/zhushmate-gui-wallet" />
 			</data>
 			<data src="${jar.dir}/zxing-core-3.3.3_LICENSE.txt" type="file">
-				<mapper type="perm" filemode="755" prefix="/usr/lib/zecmate-gui-wallet" />
+				<mapper type="perm" filemode="755" prefix="/usr/lib/hushmate-gui-wallet" />
 			</data>
 			<data src="${jar.dir}/zxing-javase-3.3.3.jar" type="file">
-				<mapper type="perm" filemode="755" prefix="/usr/lib/zecmate-gui-wallet" />
+				<mapper type="perm" filemode="755" prefix="/usr/lib/hushmate-gui-wallet" />
 			</data>
 			<data src="${jar.dir}/zxing-javase-3.3.3_LICENSE.txt" type="file">
-				<mapper type="perm" filemode="755" prefix="/usr/lib/zecmate-gui-wallet" />
+				<mapper type="perm" filemode="755" prefix="/usr/lib/hushmate-gui-wallet" />
 			</data>
 
 			<!-- TODO: As of Nov 2017 the IPFS wallet integration is suspended.
             <data src="${jar.dir}/go-ipfs/ipfs" type="file">
-              <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate/go-ipfs"/>
+              <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate/go-ipfs"/>
             </data>
             <data src="${jar.dir}/go-ipfs/LICENSE" type="file">
-              <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate/go-ipfs"/>
+              <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate/go-ipfs"/>
             </data>
             <data src="${jar.dir}/go-ipfs/README.md" type="file">
-              <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate/go-ipfs"/>
+              <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate/go-ipfs"/>
             </data>
             -->
-	      <data src="${deb.resource.dir}/zecmate" type="file">
+	      <data src="${deb.resource.dir}/hushmate" type="file">
 	        <mapper type="perm" filemode="755" prefix="/usr/bin"/>
 	      </data>
-	      <data src="${deb.resource.dir}/ZECmateWallet.desktop" type="file">
+	      <data src="${deb.resource.dir}/HUSHmateWallet.desktop" type="file">
 	        <mapper type="perm" filemode="755" prefix="/usr/share/applications"/>
 	      </data>
-	      <data src="${deb.resource.dir}/ZECmate.png" type="file">
-	        <mapper type="perm" filemode="755" prefix="/usr/lib/zecmate"/>
+	      <data src="${deb.resource.dir}/HUSHmate.png" type="file">
+	        <mapper type="perm" filemode="755" prefix="/usr/lib/hushmate"/>
 	      </data>	    	
 	    </deb>
 	</target>
@@ -212,7 +212,7 @@
 	</target>
 	
     <target name="buildit" depends="clean,jar,copyothers,ubuntuPackage">
-    	<echo message="Built Zcash Desktop GUI Wallet with JDK ${ant.java.version}"/>
+    	<echo message="Built Hush Desktop GUI Wallet with JDK ${ant.java.version}"/>
     	<!-- Final cleanup -->
     	<delete dir="${classes.dir}"/>
     	<delete dir="${temp.dir}"/>

@@ -1,0 +1,8 @@
+Package: hushmate
+Version: 1.0.0
+Section: misc
+Priority: low
+Architecture: all
+Description: HUSHmate Swing Wallet - Desktop GUI Wallet for Hush
+Maintainer: tadeas.kmenta@zel.cash
+Depends: default-jdk, hush

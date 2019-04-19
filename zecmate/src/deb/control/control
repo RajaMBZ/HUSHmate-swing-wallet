@@ -1,8 +1,0 @@
-Package: zecmate
-Version: 1.3.0
-Section: misc
-Priority: low
-Architecture: all
-Description: ZECmate Swing Wallet - Desktop GUI Wallet for Zcash
-Maintainer: tadeas.kmenta@zel.cash
-Depends: default-jdk, zcash

@@ -589,13 +589,13 @@ public class ZcashYUIEditDialog
 		try {
 			
 			String settingsDir = OSUtil.getSettingsDirectory();
-			File zcashConf = new File(settingsDir + File.separator + "zcash_ui.properties");
+			File zcashConf = new File(settingsDir + File.separator + "hush_ui.properties");
 			if (!zcashConf.exists())
 			{
 				Log.error("Could not find file: {0} !", zcashConf.getAbsolutePath());
 				
 			} 
-			Log.info("File zcash_ui.properties found");
+			Log.info("File hush_ui.properties found");
 			Properties confProps = new Properties();
 			FileInputStream fis = null;
 			try
@@ -627,7 +627,7 @@ public class ZcashYUIEditDialog
 			}
 		}
 		catch(Exception e) {
-			Log.warning("Error obtaining properties from zcash_ui.properties file due to: {0} {1}",
+			Log.warning("Error obtaining properties from hush_ui.properties file due to: {0} {1}",
 					e.getClass().getName(), e.getMessage());
 		}	
 	}
@@ -636,13 +636,13 @@ public class ZcashYUIEditDialog
 		try {
 			
 			String settingsDir = OSUtil.getSettingsDirectory();
-			File zcashConf = new File(settingsDir + File.separator + "zcash_ui.properties");
+			File zcashConf = new File(settingsDir + File.separator + "hush_ui.properties");
 			if (!zcashConf.exists())
 			{
 				Log.error("Could not find file: {0} !", zcashConf.getAbsolutePath());
 				
 			} 
-			Log.info("File zcash_ui.properties found");
+			Log.info("File hush_ui.properties found");
 			Properties confProps = new Properties();
 			FileInputStream fis = null;
 			FileOutputStream fr = null;  
@@ -696,7 +696,7 @@ public class ZcashYUIEditDialog
 				confProps.setProperty(ZcashXUI.MESSAGE_SENT_PROPERTY_COLOR, messageSentColor);
 				confProps.setProperty(ZcashXUI.MESSAGE_RECEIVED_PROPERTY_COLOR, messageReceivedColor);
 				confProps.setProperty(ZcashXUI.CURRENCY, currencyOptions.getSelectedItem().toString());  
-				confProps.store(fr, "Save zcash_ui.properties file");
+				confProps.store(fr, "Save hush_ui.properties file");
 				
 			} finally
 			{
@@ -710,7 +710,7 @@ public class ZcashYUIEditDialog
 			}
 		}
 		catch(Exception e) {
-			Log.warning("Error obtaining properties from zcash_ui.properties file due to: {0} {1}",
+			Log.warning("Error obtaining properties from hush_ui.properties file due to: {0} {1}",
 					e.getClass().getName(), e.getMessage());
 		}	
 	}
