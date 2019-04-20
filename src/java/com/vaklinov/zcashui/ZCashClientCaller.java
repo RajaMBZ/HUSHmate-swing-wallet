@@ -77,6 +77,8 @@ public class ZCashClientCaller
 	{
 		public int numConnections;
 		public Date lastBlockDate;
+		public int lastBlockHeight;
+		public int notarized;
 	}
 
 
@@ -979,9 +981,12 @@ public class ZCashClientCaller
 		info.numConnections = Integer.valueOf(strNumCons.trim());
 
 		String strBlockCount = this.executeCommandAndGetSingleStringResponse("getblockcount");
+		info.lastBlockHeight = Integer.valueOf(strBlockCount.trim());
 		String lastBlockHash = this.executeCommandAndGetSingleStringResponse("getblockhash", strBlockCount.trim());
 		JsonObject lastBlock = this.executeCommandAndGetJsonObject("getblock", wrapStringParameter(lastBlockHash.trim()));
 		info.lastBlockDate = new Date(Long.valueOf(lastBlock.getLong("time", -1) * 1000L));
+		JsonObject getinfo = this.executeCommandAndGetJsonObject("getinfo", null);
+		info.notarized = Integer.valueOf(getinfo.getInt("notarized", -1));
 
 		return info;
 	}

@@ -567,7 +567,7 @@ public class DashboardPanel
 		}
 				
 		String text =langUtil.getString("panel.dashboard.network.blockchain.label",
-				percentage, info.lastBlockDate.toLocaleString(), info.numConnections );
+				percentage, info.lastBlockDate.toLocaleString(), info.numConnections, info.lastBlockHeight, info.notarized);
 
 		this.networkAndBlockchainLabel.setText(text);
 		
