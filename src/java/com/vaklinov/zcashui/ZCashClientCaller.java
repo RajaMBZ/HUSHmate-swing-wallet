@@ -433,14 +433,15 @@ public class ZCashClientCaller
 	public synchronized String[] getWalletAllPublicAddresses()
 		throws WalletCallException, IOException, InterruptedException
 	{
-		JsonArray jsonReceivedOutputs = executeCommandAndGetJsonArray("listreceivedbyaddress", "0", "true");
+		// listreceivedbyaddress is causing segmentation fault. Needs to be fixed in Hush daemon before reenabling. 
+		// JsonArray jsonReceivedOutputs = executeCommandAndGetJsonArray("listreceivedbyaddress", "0", "true");
 
 		Set<String> addresses = new HashSet<>();
-		for (int i = 0; i < jsonReceivedOutputs.size(); i++)
-		{
-		   	JsonObject outp = jsonReceivedOutputs.get(i).asObject();
-		   	addresses.add(outp.getString("address", "ERROR!"));
-		}
+		// for (int i = 0; i < jsonReceivedOutputs.size(); i++)
+		// {
+		//    	JsonObject outp = jsonReceivedOutputs.get(i).asObject();
+		//    	addresses.add(outp.getString("address", "ERROR!"));
+		// }
 
 		return addresses.toArray(new String[0]);
     }
