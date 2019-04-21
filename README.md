@@ -1,29 +1,22 @@
-# [HUSHmate Swing Wallet](https://swing.hushmate.com/) 
-## Your best mate for [Zcash](https://z.cash/)
+# HUSHmate
+## Your best mate for [Hush](https://myhush.org/)
 
-HUSHmate Swing Wallet is a GUI destkop wallet for Hush. This fully compatible sapling release is availalbe for macOS, Windows and Linux. Download the latest release from GitHub releases or head on to [HUSHmate Swing Wallet website](https://swing.hushmate.com/) .
+HUSHmate Swing Wallet is a GUI destkop wallet for Hush. This fully compatible sapling release is availalbe for macOS, Windows and Linux. Download the latest release from GitHub releases.
 
 ![Screenshot](https://github.com/HUSHmate/HUSHmate-swing-wallet/raw/master/docs/hushmate.png "Main Window")
 
-**This wallet is targeted at advanced users who understand the implications of running a full Zcash node on**
+**This wallet is targeted at advanced users who understand the implications of running a full Hush node on**
 **the local machine, maintaining a full local copy of the blockchain, maintaining and backing up the**
-**Zcash nodes' `wallet.dat` file etc! The wallet is not suitable for novice crypto-currency users!**
+**Hush nodes' `wallet.dat` file etc! The wallet is not suitable for novice crypto-currency users!**
 
 **SECURITY WARNING: Encryption of the wallet.dat file is an experimental feature.**
 **The wallet.dat needs to be backed up regularly (not just once - e.g. after every 30-40**
 **outgoing transactions) and it must also be backed up after creating a new Z address.**
 
-**AUTO-DEPRECATION WARNING: Wallet binary releases for Mac/Windows contain Zcash full node binaries. These have an auto-deprecation feature:**
-**they are considered outdated after 18 weeks and stop working. So they need to be updated to a newer version before this term expires.**
-**Users need to ensure they use an up-to-date version of the wallet (e.g. update the wallet every two months or so).**
 
-#### Download HUSHmate Swing wallet at https://github.com/HUSHmate/HUSHmate-swing-wallet/releases or from official website https://swing.hushmate.com or by using APT repository following https://hushmate.github.io/aptrepo/
+#### Download HUSHmate Swing wallet at https://github.com/HUSHmate/HUSHmate-swing-wallet/releases
 
 ## Building, installing and running the HUSHmate Swing Wallet
-
-Before installing the HUSHmate Swing Wallet you need to have Zcash up and running. The following 
-[guide](https://github.com/zcash/zcash/blob/master/README.md) 
-explains how to set up [Zcash](https://z.cash/). 
 
 **For security reasons it is recommended to always build the GUI wallet program from GitHub**
 **[source](https://github.com/HUSHmate/HUSHmate-swing-wallet/archive/master.zip).**
@@ -73,9 +66,9 @@ The details of how to build it are described below (easy to follow).
 
 3. Installing the built HUSHmate Swing Wallet
 
-   3.1. If you have built Zcash from source code:
+   3.1. If you have built Hush from source code:
 
-     Assuming you have already built from source code [Zcash](https://z.cash/) in directory `/home/user/zcash/src` (for example - this is the typical build dir. for Zcash v2.0.3) which contains the command line tools `komodo-cli` and `komodod` you need to take the created JAR files and copy them to directory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `komodod`). Example copy command:
+     Assuming you have already built from source code [Hush](https://myhush.org/) in directory `/home/user/komodo/src` (for example) which contains the command line tools `komodo-cli` and `komodod` you need to take the created JAR files and copy them to directory `/home/user/komodo/src` (the same dir. that contains `zcash-cli` and `komodod`). Example copy command:
       ```
       user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ cp -R -v ./build/jars/* /home/user/komodo/src    
       ```
@@ -83,8 +76,8 @@ The details of how to build it are described below (easy to follow).
 4. Running the installed HUSHmate Swing Wallet
 
    It may be run from command line or started from another GUI tool (e.g. file manager). 
-   Assuming you have already installed [Zcash](https://z.cash/) and the GUI Wallet `HUSHmate.jar` in 
-   directory `/home/user/zcash/src` one way to run it from command line is:
+   Assuming you have already installed [Hush](https://myhush.org/) and the GUI Wallet `HUSHmate.jar` in 
+   directory `/home/user/komodo/src` one way to run it from command line is:
    ```
    user@ubuntu:~/build-dir/HUSHmate-swing-wallet$ java -jar /home/user/zcash/src/HUSHmate.jar
    ```

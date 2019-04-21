@@ -1,6 +1,5 @@
-## [HUSHmate Swing Wallet](https://swing.hushmate.com/)
-
-## HUSHmate Swing Wallet is distributed via [APT Repository](https://hushmate.github.io/aptrepo/) or can be downloaded directly from [Releases](https://github.com/HUSHmate/HUSHmate-swing-wallet/releases) where signed .deb package is distributed or from official [HUSHmate Swing Wallet Website](https://swing.hushmate.com)
+## HUSHmate
+## HUSHmate Swing Wallet can be downloaded directly from [Releases](https://github.com/HUSHmate/HUSHmate-swing-wallet/releases) where .deb package is distributed.
 
 ![Screenshot](hushmate.png "Main Window")
 
@@ -10,7 +9,7 @@
 
 
 ### Installing the HUSHmate Swing Wallet on Linux
-sudo dpkg -i hushmate.deb
+sudo dpkg -i --ignore-depends=hush hushmate.deb
    
 ### Running the HUSHmate Swing Wallet on Linux
 

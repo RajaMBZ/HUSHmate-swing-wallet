@@ -26,19 +26,19 @@
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\Users\kment\Source\Repos\HUSHmate-swing-wallet\lib">
+			<fileset dir="C:\Users\TheTrunk\Source\Repos\HUSHmate-swing-wallet\lib">
 				<filename name="bitcoinj-core-0.14.5.jar"/>
 			</fileset>
 		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="C:\Users\kment\Source\Repos\HUSHmate-swing-wallet">
+			<fileset dir="C:\Users\TheTrunk\Source\Repos\HUSHmate-swing-wallet">
 				<include name="src\resources/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
-			<fileset dir="C:\Users\kment\Source\Repos\HUSHmate-swing-wallet">
+			<fileset dir="C:\Users\TheTrunk\Source\Repos\HUSHmate-swing-wallet">
 				<include name="src\java/**" />
 			</fileset>
 		</copy>

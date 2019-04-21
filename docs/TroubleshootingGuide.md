@@ -1,4 +1,4 @@
-## [HUSHmate Swing Wallet](https://swing.hushmate.com/) troubleshooting guide
+## HUSHmate troubleshooting guide
 
 This document outlines possible solutions to several common problems that user might encounter while using the wallet.
 

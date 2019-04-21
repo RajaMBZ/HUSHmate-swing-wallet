@@ -5,7 +5,7 @@ AppId={{fxApplication}}
 AppName=HUSHmate
 AppVersion=1.0.0
 AppVerName=HUSHmate 1.0.0
-AppPublisher=Zel Technologies GmbH
+AppPublisher=MyHush
 AppComments=HUSHmate
 AppCopyright=Copyright (C) 2019
 ;AppPublisherURL=http://java.com/
@@ -18,7 +18,7 @@ DisableProgramGroupPage=Yes
 DisableReadyPage=No
 DisableFinishedPage=No
 DisableWelcomePage=Yes
-DefaultGroupName=Zel Technologies GmbH
+DefaultGroupName=MyHush
 ;Optional License
 LicenseFile=
 ;WinXP or above
@@ -31,7 +31,7 @@ SetupIconFile=HUSHmate\HUSHmate.ico
 UninstallDisplayIcon={app}\HUSHmate.ico
 UninstallDisplayName=HUSHmate
 WizardImageStretch=No
-WizardSmallImageFile=HUSHmate-setup-icon.bmp   
+WizardSmallImageFile=HUSHmate.bmp   
 ArchitecturesInstallIn64BitMode=x64
 VersionInfoVersion=1.0.0
 

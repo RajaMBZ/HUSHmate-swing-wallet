@@ -1,4 +1,4 @@
-## [HUSHmate Swing Wallet](https://swing.hushmate.com/) known security issues
+## HUSHMate known security issues
 
 This document describes various security-related vulnerabilities in the GUI wallet that have become known after release and users should be aware of them!
 
