@@ -3,8 +3,8 @@
 [Setup]
 AppId={{fxApplication}}
 AppName=HUSHmate
-AppVersion=1.0.0
-AppVerName=HUSHmate 1.0.0
+AppVersion=1.0.1
+AppVerName=HUSHmate 1.0.1
 AppPublisher=MyHush
 AppComments=HUSHmate
 AppCopyright=Copyright (C) 2019
@@ -23,7 +23,7 @@ DefaultGroupName=MyHush
 LicenseFile=
 ;WinXP or above
 MinVersion=0,5.1 
-OutputBaseFilename=HUSHmate-1.0.0
+OutputBaseFilename=HUSHmate-1.0.1
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=poweruser
@@ -33,7 +33,7 @@ UninstallDisplayName=HUSHmate
 WizardImageStretch=No
 WizardSmallImageFile=HUSHmate.bmp   
 ArchitecturesInstallIn64BitMode=x64
-VersionInfoVersion=1.0.0
+VersionInfoVersion=1.0.1
 
 
 [Languages]

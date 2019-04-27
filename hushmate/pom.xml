@@ -7,7 +7,7 @@
     <parent>
         <groupId>hushmate.com</groupId>
         <artifactId>HUSHmate</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>hushmate</artifactId>

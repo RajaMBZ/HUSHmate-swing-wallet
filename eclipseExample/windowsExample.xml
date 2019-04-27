@@ -118,7 +118,7 @@
 		<fx:application id="fxApplication"
 			name="HUSHmate"
 			mainClass="com.vaklinov.zcashui.ZCashUI"
-			version="1.0.0"
+			version="1.0.1"
 		/>
 	
 		<mkdir dir="build/classes/META-INF" />
@@ -134,7 +134,7 @@
 			<manifest>
 				<attribute name="Implementation-Vendor" value="myHush"/>
 				<attribute name="Implementation-Title" value="HUSHmate"/>
-				<attribute name="Implementation-Version" value="1.0.0"/>
+				<attribute name="Implementation-Version" value="1.0.1"/>
 				<attribute name="JavaFX-Feature-Proxy" value="None"/>
 			</manifest>
 		</fx:jar>
